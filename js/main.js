@@ -280,7 +280,6 @@ function openCategory(folder,title){
                 playsinline>
           </video>
           <span>${item.name}</span>
-          <button class="vote-btn">Votar</button>
         </div>`;
       return;
     }
