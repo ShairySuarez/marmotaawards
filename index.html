@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Marmota Awards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/marmota.png">
+  <!-- assets/marmota.png -->
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <img src="assets/marmota.png" alt="Marmota Awards Logo">
+        </div>
+        <nav class="nav-links">
+          <a href="#home">INICIO</a>
+          <a href="#categories">NOMINADOS</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>MARMOTA'S AWARDS</h1>
+      <p>Celebrando lo mejor del grupo</p>
+      <button class="btn-gold" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+        Ver nominados
+      </button>
+    </div>
+  </header>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+    <h2>Nominaciones</h2>
+
+    <div class="categories-grid">     
+      <div class="category-card" data-folder="adaptacion" data-title="Mejor Adaptación">MEJOR ADAPTACIÓN</div>
+      <div class="category-card" data-folder="sticker" data-title="Mejor Sticker">MEJOR STICKER</div>
+      <div class="category-card" data-folder="juego" data-title="Juego Favorito">JUEGO FAVORITO</div>
+      <div class="category-card" data-folder="audio" data-title="Mejor Audio Discord">MEJOR AUDIO DISCORD</div>
+      <div class="category-card" data-folder="independiente" data-title="Mejor Meme Independiente">MEJOR MEME INDEPENDIENTE</div>
+      <div class="category-card" data-folder="activo" data-title="Más Activo de Discord">MÁS ACTIVO DE DISCORD</div>
+      <div class="category-card" data-folder="integracion" data-title="Mejor Integración">MEJOR INTEGRACIÓN</div>
+      <div class="category-card" data-folder="meme" data-title="Mejor Meme del Grupo">MEJOR MEME GRUPO</div>
+      <div class="category-card" data-folder="revelacion" data-title="Marmota Revelación">MARMOTA REVELACIÓN</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Marmota Awards</p>
+  </footer>
+
+  <!-- PLAYER -->
+  <div class="player" style="flex-direction: column-reverse;">
+    <div class="player-info" id="songTitle">Team Of The Year</div>
+
+    <button class="player-btn" id="musicBtn">
+      <img id="musicIcon" src="assets/pause.png" alt="">
+    </button>
+
+    <div class="volume-box" id="volumeBox">
+      <input type="range" min="0" max="1" step="0.02" value="0.6" id="volSlider">
+    </div>
+
+    <audio id="bgMusic">
+      <source src="assets/TOTY.mp3" type="audio/mp3">
+    </audio>
+  </div>
+
+  <!-- UNIVERSAL MODAL (REUSABLE) -->
+  <div class="modal" id="categoryModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeCategoryModal">✕</button>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <div class="center-btn">
+        <button class="vote-btn" id="link-form">VOTAR CATEGORIA</button>
+      </div>
+      <div class="nominees-grid" id="modalNominees"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
